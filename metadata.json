@@ -1,0 +1,6 @@
+{
+  "name": "Torres & Luccarelli Advogados",
+  "description": "Site institucional e núcleos especializados de assessoria jurídica em Direito Trabalhista, Família e Cível em Campinas e região.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
