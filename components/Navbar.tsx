@@ -195,6 +195,15 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
             >
               FAQ
             </Link>
+
+            <Link
+              href="/contato"
+              className={`hover:text-[#725b38] transition-colors ${
+                isActive('/contato') ? 'text-[#725b38] font-semibold' : ''
+              }`}
+            >
+              Contato
+            </Link>
           </nav>
 
           {/* Action CTAs */}
@@ -298,6 +307,14 @@ export default function Navbar({ onOpenConsultation }: NavbarProps) {
               className="py-2 border-b border-gray-100"
             >
               Dúvidas Frequentes (FAQ)
+            </Link>
+
+            <Link
+              href="/contato"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-2 border-b border-gray-100 font-semibold text-[#725b38]"
+            >
+              Contato & Localização
             </Link>
 
             <div className="pt-2 flex flex-col gap-2">

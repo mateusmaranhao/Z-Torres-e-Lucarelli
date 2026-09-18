@@ -19,7 +19,8 @@ import {
   Award,
   Building2,
   Lock,
-  Headphones
+  Headphones,
+  ExternalLink
 } from 'lucide-react';
 import FaqAccordion from '@/components/FaqAccordion';
 import { 
@@ -610,30 +611,51 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Col: Interactive Map Visual */}
+            {/* Right Col: Interactive Google Maps Embed */}
             <div className="lg:col-span-6">
-              <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-2 border border-white/10">
-                <div
-                  className="w-full h-80 rounded-xl bg-cover bg-center relative"
-                  style={{
-                    backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuCd0YLHa9LAmRDBO1JiH86XkvgSl8e9u3qZGpbQA-mU3yycEj3BO538Nqv6mAyvjGgiYGn2_2NHJzeLwimLCnqLK2o-pPtT4r_GnYF3oYNQsxdmd-UjhBKprQyWZzaEG4aXUA-pTquDhPC69-HEuC_zi5evmkBWWOzfBua3a4apSmws-0dV_0J0uBybmU-WTifiNC9CCLF9nHsQtFLeCpaHELEiflWAyT2ZSyCFc_3lQyLYKqH2PD066g')`,
-                  }}
-                >
-                  <div className="absolute inset-0 bg-[#131b2e]/20 flex items-end p-4">
-                    <div className="bg-white/95 backdrop-blur-md p-3.5 rounded-xl shadow-lg text-gray-900 flex items-center gap-3 text-xs w-full max-w-sm">
-                      <div className="w-8 h-8 rounded-full bg-[#725b38] text-white flex items-center justify-center shrink-0">
-                        <MapPin size={16} />
-                      </div>
-                      <div>
-                        <span className="font-bold block text-gray-950 font-serif">
-                          Torres & Luccarelli Advogados
-                        </span>
-                        <span className="text-gray-500 text-[11px]">
-                          Rua General Osório, 1212 - Centro, Campinas
-                        </span>
-                      </div>
-                    </div>
+              <div className="rounded-2xl overflow-hidden shadow-2xl bg-white p-3 border border-white/10 space-y-3">
+                <div className="flex items-center justify-between px-1">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></div>
+                    <span className="text-xs font-bold text-gray-950">Localização em Tempo Real</span>
                   </div>
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Rua General Osório, 1212 - Centro, Campinas - SP, 13010-111")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#725b38] hover:text-[#131b2e] transition-colors"
+                  >
+                    <span>Abrir no Google Maps</span>
+                    <ExternalLink size={13} />
+                  </a>
+                </div>
+
+                <div className="w-full h-80 rounded-xl overflow-hidden border border-gray-200 relative bg-gray-100">
+                  <iframe
+                    src="https://maps.google.com/maps?q=Rua+General+Os%C3%B3rio%2C+1212+-+Centro%2C+Campinas+-+SP%2C+13010-111&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                    width="100%"
+                    height="100%"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title="Localização do Escritório Torres & Luccarelli em Campinas"
+                    className="w-full h-full"
+                  />
+                </div>
+
+                <div className="flex flex-wrap items-center justify-between gap-2 px-1 text-xs text-gray-600">
+                  <span className="font-medium text-gray-800">
+                    Rua General Osório, 1212 - Centro, Campinas - SP
+                  </span>
+                  <a
+                    href={`https://waze.com/ul?q=${encodeURIComponent("Rua General Osório 1212 Campinas")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#725b38] font-bold hover:underline"
+                  >
+                    Traçar Rota no Waze →
+                  </a>
                 </div>
               </div>
             </div>

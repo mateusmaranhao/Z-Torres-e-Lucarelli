@@ -84,7 +84,7 @@ export default function GeneralServicesPage() {
             Especialidades em Destaque
           </span>
           <h2 className="text-2xl sm:text-3xl font-serif font-bold text-gray-950 mt-1">
-            Selecione uma Área para Acessar a Mini-Landing Page Específica
+            Selecione uma Área para Conhecer Nossos Serviços Especializados
           </h2>
           <p className="text-sm text-gray-600 mt-2">
             Cada área possui uma página com detalhes aprofundados sobre documentação necessária, prazos e orientações estratégicas.
@@ -149,7 +149,7 @@ export default function GeneralServicesPage() {
                     href={`/areas-de-atuacao/${area.slug}`}
                     className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#131b2e] hover:bg-[#725b38] text-white transition-all text-xs font-semibold uppercase tracking-wider shadow-md"
                   >
-                    <span>Acessar Mini-Landing Page de {area.title}</span>
+                    <span>Acessar Página de {area.title}</span>
                     <ArrowRight size={15} />
                   </Link>
 

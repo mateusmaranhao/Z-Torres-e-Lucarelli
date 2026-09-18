@@ -82,7 +82,14 @@ export default function Footer() {
               </span>
             </div>
 
-            <div className="flex items-center gap-2.5 text-xs text-gray-300 pt-2">
+            <Link
+              href="/contato"
+              className="text-xs text-[#fedeb2] hover:underline flex items-center gap-1 font-medium"
+            >
+              <span>Ver Mapa Interativo & Traçar Rota →</span>
+            </Link>
+
+            <div className="flex items-center gap-2.5 text-xs text-gray-300 pt-1">
               <Clock size={16} className="text-[#fedeb2] shrink-0" />
               <span>{OFFICE_INFO.hours}</span>
             </div>

@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, MessageCircle, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle, ShieldCheck, CheckCircle2, ExternalLink } from 'lucide-react';
 import ConsultationSection from '@/components/ConsultationSection';
 import { OFFICE_INFO } from '@/lib/legal-data';
 
@@ -125,19 +125,48 @@ export default function AgendarConsultaPage() {
               </div>
             </div>
 
-            {/* Sede Map Card */}
-            <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-200 bg-white p-2">
-              <div
-                className="w-full h-56 rounded-xl bg-cover bg-center relative"
-                style={{
-                  backgroundImage: `url('https://lh3.googleusercontent.com/aida-public/AB6AXuCd0YLHa9LAmRDBO1JiH86XkvgSl8e9u3qZGpbQA-mU3yycEj3BO538Nqv6mAyvjGgiYGn2_2NHJzeLwimLCnqLK2o-pPtT4r_GnYF3oYNQsxdmd-UjhBKprQyWZzaEG4aXUA-pTquDhPC69-HEuC_zi5evmkBWWOzfBua3a4apSmws-0dV_0J0uBybmU-WTifiNC9CCLF9nHsQtFLeCpaHELEiflWAyT2ZSyCFc_3lQyLYKqH2PD066g')`,
-                }}
-              >
-                <div className="absolute inset-0 bg-[#131b2e]/30 flex items-end p-4">
-                  <span className="bg-white/95 px-3 py-1.5 rounded-lg text-xs font-bold text-gray-900 shadow">
-                    Rua General Osório, 1212 - Centro, Campinas
-                  </span>
+            {/* Sede Map Embed */}
+            <div className="rounded-2xl overflow-hidden shadow-sm border border-gray-200 bg-white p-3 space-y-3">
+              <div className="flex items-center justify-between px-1">
+                <div>
+                  <span className="text-xs font-bold text-gray-950 block">Localização da Sede</span>
+                  <span className="text-[11px] text-gray-500">Rua General Osório, 1212 - Centro, Campinas</span>
                 </div>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Rua General Osório, 1212 - Centro, Campinas - SP, 13010-111")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[11px] font-semibold text-[#725b38] hover:text-[#131b2e] transition-colors"
+                >
+                  <span>Abrir no Maps</span>
+                  <ExternalLink size={12} />
+                </a>
+              </div>
+
+              <div className="w-full h-64 rounded-xl overflow-hidden border border-gray-200 relative bg-gray-100">
+                <iframe
+                  src="https://maps.google.com/maps?q=Rua+General+Os%C3%B3rio%2C+1212+-+Centro%2C+Campinas+-+SP%2C+13010-111&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Localização do Escritório Torres & Luccarelli em Campinas"
+                  className="w-full h-full"
+                />
+              </div>
+
+              <div className="flex items-center justify-between text-xs pt-1 px-1 text-gray-500">
+                <span>Centro de Campinas • Fácil Acesso</span>
+                <a
+                  href={`https://waze.com/ul?q=${encodeURIComponent("Rua General Osório 1212 Campinas")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#725b38] font-medium hover:underline text-[11px]"
+                >
+                  Navegar com Waze →
+                </a>
               </div>
             </div>
           </div>
